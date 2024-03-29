@@ -1,12 +1,13 @@
+import React from "react";
+import ProfileImage from "../profileImage/ProfileImage"
+
+
 function Tweet(props) {
   const {name, image, handle, timestamp, message } = props
   return (
     <div className="tweet">
-      <img
-        src= { image }
-        className="profile"
-        alt="profile"
-      />
+      <ProfileImage className="image" image= { image }/>
+      
 
       <div className="body">
         <div className="top">

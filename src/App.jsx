@@ -1,5 +1,5 @@
 import "./App.css";
-import Tweet from "./components/Tweet";
+import Tweet from "./components/tweet/Tweet";
 
 // eslint-disable-next-line no-unused-vars
 const tweetsArray = [
