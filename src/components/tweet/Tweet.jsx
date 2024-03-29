@@ -1,35 +1,30 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
-import ProfileImage from "../profileImage/ProfileImage"
-
+import ProfileImage from "../profileImage/ProfileImage";
+import User from "../user/User";
+import Timestamp from "../timestamp/Timestamp";
+import Message from "../message/Message";
+import Actions from "../actions/Actions";
 
 function Tweet(props) {
-  const {name, image, handle, timestamp, message } = props
+  const { name, image, handle, timestamp, message } = props
   return (
     <div className="tweet">
-      <ProfileImage className="image" image= { image }/>
-      
+      <ProfileImage className="image" image={image} />
+
+
 
       <div className="body">
         <div className="top">
-          <span className="user">
-            <span className="name">{ name }</span>
-            <span className="handle">{ handle }</span>
-          </span>
-
-          <span className="timestamp">{ timestamp }</span>
+          <span className="user"></span>
+          <User className="user" name= { name } handle= { handle } />
+          <Timestamp className="timestamp" date= {timestamp}/>
         </div>
 
-        <p className="message">
-          { message }
-        </p>
+        <Message text= { message }/>
+        
 
-        <div className="actions">
-          {/* Font Awesome icons */}
-          <i className="far fa-comment" data-testid="comment-icon"></i>
-          <i className="fas fa-retweet" data-testid="retweet-icon"></i>
-          <i className="far fa-heart" data-testid="heart-icon"></i>
-          <i className="fas fa-share" data-testid="share-icon"></i>
-        </div>
+       <Actions/>
       </div>
 
       <i className="fas fa-ellipsis-h"></i>

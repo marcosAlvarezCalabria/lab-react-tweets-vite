@@ -39,10 +39,21 @@ const tweetsArray = [
 ];
 
 function App() {
- 
+  
+  let tweets = tweetsArray.map((tweet, index) => (
+    <Tweet
+      key={index}  
+      name={tweet.user.name}
+      image={tweet.user.image}
+      handle={tweet.user.handle}
+      timestamp={tweet.timestamp}
+      message={tweet.message}
+    />
+  ));
+
   return (
     <div className="App">
-      <Tweet tweet= { tweetsArray[0] } name= { tweetsArray[0].user.name } image= { tweetsArray[0].user.image } handle= { tweetsArray[0].user.handle } timestamp= { tweetsArray[0].timestamp } message= { tweetsArray[0].message } />
+      {tweets} 
     </div>
   );
 }
